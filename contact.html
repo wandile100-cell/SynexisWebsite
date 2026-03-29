@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Synexis IT Solutions</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --primary: #14b8a6;
+      --primary-2: #22c55e;
+      --card: rgba(15, 23, 42, 0.88);
+      --line: rgba(110, 231, 183, 0.16);
+      --soft: rgba(255,255,255,0.04);
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(20,184,166,0.16), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(34,197,94,0.12), transparent 30%),
+        linear-gradient(135deg, #020617, #0f172a);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 40px;
+      background: rgba(3,7,18,0.78);
+      backdrop-filter: blur(8px);
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 10px 24px rgba(20,184,166,0.25);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .brand p {
+      margin: 6px 0 0;
+      color: #7dd3fc;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #22c55e;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      margin: 0 0 12px;
+      font-size: 2.5rem;
+      color: #99f6e4;
+    }
+
+    .hero p {
+      margin: 0 auto;
+      max-width: 750px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 20px 70px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 18px 34px rgba(0,0,0,0.22);
+    }
+
+    .panel h3 {
+      margin-top: 0;
+      margin-bottom: 18px;
+      color: #99f6e4;
+      font-size: 1.5rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .info-card {
+      background: var(--soft);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .info-card h4 {
+      margin: 0 0 10px;
+      color: #99f6e4;
+      font-size: 1rem;
+    }
+
+    .info-card p,
+    .info-card a {
+      margin: 0;
+      color: var(--muted);
+      text-decoration: none;
+      line-height: 1.8;
+      word-break: break-word;
+    }
+
+    .info-card a:hover {
+      color: white;
+    }
+
+    .full-card {
+      background: var(--soft);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    .full-card h4 {
+      margin: 0 0 10px;
+      color: #99f6e4;
+    }
+
+    .full-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .action-btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 10px 24px rgba(20,184,166,0.22);
+    }
+
+    .action-btn.secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.14);
+      color: white;
+      box-shadow: none;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 6px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      outline: none;
+      background: rgba(255,255,255,0.04);
+      color: white;
+      font-size: 15px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #94a3b8;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(20,184,166,0.7);
+      box-shadow: 0 0 0 3px rgba(20,184,166,0.12);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      border: none;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      box-shadow: 0 10px 24px rgba(20,184,166,0.22);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .map-wrap {
+      margin-top: 22px;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    iframe {
+      width: 100%;
+      height: 280px;
+      border: none;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #020617;
+      color: #cbd5e1;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #25d366, #1faa52);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+      font-weight: bold;
+      z-index: 9999;
+    }
+
+    .whatsapp-float svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 18px 20px;
+      }
+
+      nav {
+        width: 100%;
+        margin-top: 14px;
+      }
+
+      nav a {
+        margin: 0 14px 0 0;
+        display: inline-block;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .whatsapp-float span {
+        display: none;
+      }
+
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        justify-content: center;
+        border-radius: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="brand-wrap">
+    <div class="logo-mark">SI</div>
+    <div class="brand">
+      <h1>Synexis IT Solutions</h1>
+      <p>Where Technology Meets Security</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Let’s Talk About Your Next Project</h2>
+  <p>
+    Reach out for CCTV, networking, alarms, entertainment setup, and other technology services.
+    We’re ready to help with practical solutions for homes and businesses.
+  </p>
+</section>
+
+<div class="container">
+
+  <div class="panel">
+    <h3>Contact Information</h3>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>Phone</h4>
+        <p><a href="tel:+27690682639">069 068 2639</a></p>
+        <p><a href="tel:+27672119335">067 211 9335</a></p>
+      </div>
+
+      <div class="info-card">
+        <h4>Email</h4>
+        <p><a href="mailto:wandile100@gmail.com">wandile100@gmail.com</a></p>
+        <p><a href="mailto:info@synexis.co.za">info@synexis.co.za</a></p>
+      </div>
+    </div>
+
+    <div class="full-card">
+      <h4>Address</h4>
+      <p>
+        18765 Mdeira Vine Street<br>
+        Protea Glen Ext 9<br>
+        Soweto<br>
+        Johannesburg<br>
+        1819
+      </p>
+    </div>
+
+    <div class="quick-actions">
+      <a class="action-btn" href="tel:+27690682639">Call Now</a>
+      <a class="action-btn secondary" href="mailto:info@synexis.co.za">Send Email</a>
+      <a class="action-btn secondary" href="https://wa.me/27690682639?text=Hi%20I%20need%20a%20quote" target="_blank">WhatsApp</a>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=18765%20Mdeira%20Vine%20Street%20Protea%20Glen%20Ext%209%20Soweto%20Johannesburg%201819&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Send Us a Message</h3>
+
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="text" id="phone" placeholder="Phone Number" required />
+      <textarea id="message" placeholder="Tell us what you need help with"></textarea>
+      <button class="submit-btn" type="submit">Send Message</button>
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  <p>Synexis IT Solutions • Johannesburg, South Africa</p>
+  <p>Call/WhatsApp: 069 068 2639 / 067 211 9335</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/27690682639?text=Hi%20I%20need%20a%20quote" target="_blank">
+  <svg viewBox="0 0 32 32">
+    <path fill="currentColor" d="M19.11 17.23c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.62.14-.19.28-.71.9-.87 1.09-.16.19-.33.21-.61.07-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47h-.53c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1 2.72 1.14 2.91c.14.19 1.97 3.01 4.77 4.22.67.29 1.2.46 1.61.59.68.22 1.29.19 1.77.12.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+  </svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    message: document.getElementById('message').value
+  };
+
+  try {
+    await fetch('http://localhost:3000/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    alert('Message sent successfully!');
+    document.getElementById('contactForm').reset();
+  } catch (error) {
+    alert('There was a problem sending your message.');
+  }
+});
+</script>
+
+</body>
+</html>
