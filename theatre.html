@@ -1,104 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home Theatre Setup | Synexis IT Solutions</title>
-
-  <style>
-    * { box-sizing: border-box; }
-
-    :root {
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --primary: #14b8a6;
-      --primary-2: #22c55e;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--text);
-      background-image:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
-        url("images/theatre.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-
-    header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: rgba(2, 6, 23, 0.74);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  flex-wrap: wrap;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home Theatre Setup | Synexis IT Solutions</title>
+<style>
+:root{
+  --bg-1:#020617;
+  --bg-2:#0f172a;
+  --surface:rgba(15,23,42,.78);
+  --surface-2:rgba(15,23,42,.88);
+  --line:rgba(148,163,184,.16);
+  --text:#f8fafc;
+  --muted:#cbd5e1;
+  --primary:#14b8a6;
+  --primary-2:#22c55e;
+  --accent:#facc15;
+  --glow:rgba(20,184,166,.28);
+  --shadow:0 18px 34px rgba(0,0,0,.22);
 }
-
-.brand-wrap {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(20,184,166,.14), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(34,197,94,.10), transparent 30%),
+    linear-gradient(135deg,var(--bg-1),var(--bg-2));
 }
-
-.logo-mark {
-  width: 54px;
-  height: 54px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #14b8a6, #22c55e);
-  display: grid;
-  place-items: center;
-  font-weight: bold;
-  color: white;
+body.has-image-bg{
+  background:
+    linear-gradient(rgba(2,6,23,.56), rgba(2,6,23,.82)),
+    var(--page-image) center/cover no-repeat fixed;
 }
-
-.brand h1 {
-  margin: 0;
-  font-size: 1.5rem;
+a{color:inherit}
+header{
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:20px 40px;background:rgba(2,6,23,.74);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.05);position:sticky;top:0;z-index:50;flex-wrap:wrap;
 }
-
-.brand p {
-  margin: 5px 0 0;
-  color: #7dd3fc;
-  font-size: 0.95rem;
+.brand-wrap{display:flex;align-items:center;gap:14px}
+.logo-mark{
+  width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  display:grid;place-items:center;font-weight:bold;color:white;box-shadow:0 12px 28px var(--glow)
 }
-
-nav a {
-  color: #f8fafc;
-  text-decoration: none;
-  margin-left: 18px;
-  font-weight: 500;
+.brand h1{margin:0;font-size:1.5rem}
+.brand p{margin:5px 0 0;color:#7dd3fc;font-size:.95rem}
+nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+nav a{color:var(--text);text-decoration:none;font-weight:500;padding:10px 14px;border-radius:999px;transition:.25s ease}
+nav a:hover{color:#99f6e4;background:rgba(255,255,255,.05)}
+nav a.active{color:#fff;background:linear-gradient(135deg,var(--primary),var(--primary-2))}
+.container{max-width:1200px;margin:auto;padding:70px 20px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.hero-badge{
+  display:inline-block;padding:8px 14px;border-radius:999px;background:rgba(20,184,166,.12);
+  border:1px solid rgba(20,184,166,.25);color:#99f6e4;font-size:.92rem;margin-bottom:16px
 }
-
-nav a:hover {
-  color: #99f6e4;
+.hero h2{font-size:3rem;line-height:1.1;margin:0 0 16px;color:#99f6e4}
+.hero p,.section-subtitle,.muted{color:var(--muted);line-height:1.8}
+.hero-actions,.btn-row,.contact-actions{display:flex;gap:14px;flex-wrap:wrap}
+.panel,.card,.price-card,.info-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)
 }
-
-@media (max-width: 700px) {
-  header {
-    padding: 18px 20px;
-  }
-
-  nav {
-    width: 100%;
-    margin-top: 14px;
-  }
-
-  nav a {
-    margin: 0 14px 0 0;
-    display: inline-block;
-  }
+.card:hover,.price-card:hover{transform:translateY(-6px)}
+.services-grid,.pricing-grid,.trust-grid,.gallery-grid,.info-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px
 }
-  </style>
+.card,.price-card{transition:.25s ease}
+.card-icon{
+  width:54px;height:54px;border-radius:16px;display:grid;place-items:center;margin-bottom:16px;
+  background:rgba(20,184,166,.12);color:#99f6e4;font-size:1.3rem
+}
+.section-title{text-align:center;font-size:2.2rem;margin:0 0 10px;color:#99f6e4}
+.section-subtitle{text-align:center;max-width:760px;margin:0 auto 34px}
+.price{font-size:2rem;font-weight:bold;color:var(--accent);margin:12px 0}
+.btn,.price-btn{
+  display:inline-block;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:bold;transition:.25s ease
+}
+.btn-primary,.price-btn{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:white;box-shadow:0 12px 28px rgba(20,184,166,.24)}
+.btn-secondary{color:white;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03)}
+.btn-primary:hover,.price-btn:hover,.btn-secondary:hover{transform:translateY(-2px)}
+.cta-box{
+  background:linear-gradient(135deg,rgba(20,184,166,.18),rgba(34,197,94,.16));
+  border:1px solid rgba(153,246,228,.18);border-radius:28px;padding:30px;text-align:center;box-shadow:var(--shadow)
+}
+footer{text-align:center;padding:30px 20px;background:rgba(2,6,23,.94);border-top:1px solid rgba(255,255,255,.05)}
+footer p{color:#cbd5e1;margin:6px 0}
+.whatsapp-float{
+  position:fixed;right:20px;bottom:20px;display:inline-flex;align-items:center;gap:10px;padding:12px 16px;
+  border-radius:999px;text-decoration:none;color:white;background:linear-gradient(135deg,#25d366,#1faa52);
+  box-shadow:0 12px 28px rgba(37,211,102,.35);font-weight:bold;z-index:100
+}
+.whatsapp-float svg{width:22px;height:22px}
+.list{padding-left:20px;line-height:1.8;color:#e5e7eb}
+.map-wrap{overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.06)}
+.map-wrap iframe{width:100%;height:360px;border:0;display:block}
+.gallery-card{overflow:hidden}
+.gallery-card img{width:100%;height:230px;object-fit:cover;display:block;background:#0b1220}
+.gallery-content{padding:18px}
+.small-note{margin-top:12px;color:var(--accent)}
+@media (max-width:920px){.hero{grid-template-columns:1fr}.hero h2{font-size:2.35rem}}
+@media (max-width:700px){
+  header{padding:18px 20px}
+  nav{width:100%;margin-top:14px}
+  nav a{padding:10px 12px}
+}
+@media (max-width:600px){
+  .hero h2,.section-title{font-size:2rem}
+  .whatsapp-float span{display:none}
+  .whatsapp-float{width:56px;height:56px;justify-content:center;border-radius:50%}
+}
+</style>
+<style>body.has-image-bg{--page-image:url('images/theatre.jpg')}</style>
 </head>
-<body>
+<body class="has-image-bg">
 
 <header>
   <div class="brand-wrap">
@@ -108,46 +125,54 @@ nav a:hover {
       <p>Where Technology Meets Security</p>
     </div>
   </div>
-
   <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="gallery.html">Gallery</a>
+    <a href="index.html" class="">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="about.html" class="">About</a>
+    <a href="contact.html" class="">Contact</a>
+    <a href="gallery.html" class="">Gallery</a>
   </nav>
 </header>
 
-<div class="container">
-  <div class="card">
-    <h2>Home Theatre Setup</h2>
-    <p>We install and set up complete home theatre systems for the best sound and viewing experience.</p>
-    <ul>
-  <li>Home theatre system installation</li>
-  <li>TV and projector setup</li>
-  <li>Sound system configuration</li>
-  <li>Surround sound wiring</li>
-  <li>Neat cable management</li>
-</ul>
 
-    <div class="btn-row">
-      <a class="btn" href="contact.html">Get a Quote</a>
-      <a class="btn btn-secondary" href="services.html">Back to Services</a>
+<div class="container">
+  <section class="hero">
+    <div class="panel">
+      <h2 style="margin-top:0;color:#99f6e4;">Home Theatre Setup</h2>
+      <p>We install and set up complete home theatre systems for the best sound and viewing experience.</p>
+      <ul class="list"><li>Home theatre system installation</li><li>TV and projector setup</li><li>Sound system configuration</li><li>Surround sound wiring</li><li>Neat cable management</li></ul>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://wa.me/27690682639?text=Hi%20I%20need%20a%20Home%20Theatre%20setup%20quote" target="_blank">Get a Quote</a>
+        <a class="btn btn-secondary" href="services.html">Back to Services</a>
+      </div>
+      <p class="small-note">⚡ Fast response on WhatsApp</p>
     </div>
-  </div>
+    <div class="panel">
+      <h3 style="margin-top:0;color:#99f6e4;">Why customers choose this service</h3>
+      <div class="info-grid">
+        <div class="info-card"><strong style="display:block;color:var(--accent);">Neat Finish</strong><span class="muted">Clean setup and tidy cable work.</span></div>
+        <div class="info-card"><strong style="display:block;color:var(--accent);">Reliable Setup</strong><span class="muted">Configured to work properly from day one.</span></div>
+        <div class="info-card"><strong style="display:block;color:var(--accent);">Quick Support</strong><span class="muted">Fast communication for quotes and questions.</span></div>
+        <div class="info-card"><strong style="display:block;color:var(--accent);">Practical Pricing</strong><span class="muted">Affordable solutions for home and business use.</span></div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <footer>
   <p>Synexis IT Solutions • Johannesburg, South Africa</p>
-  <p>Call/WhatsApp: 069 068 2639</p>
+  <p>Call/WhatsApp: 069 068 2639 / 067 211 9335</p>
+  <p>Email: info@synexis.co.za</p>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/27690682639?text=Hi%20I%20need%20help%20with%20game%20console%20setup" target="_blank">
-  <svg viewBox="0 0 32 32">
+<a class="whatsapp-float" href="https://wa.me/27690682639?text=Hi%20I%20saw%20your%20website%20and%20I%20would%20like%20a%20quote" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
     <path fill="currentColor" d="M19.11 17.23c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.62.14-.19.28-.71.9-.87 1.09-.16.19-.33.21-.61.07-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47h-.53c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1 2.72 1.14 2.91c.14.19 1.97 3.01 4.77 4.22.67.29 1.2.46 1.61.59.68.22 1.29.19 1.77.12.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+    <path fill="currentColor" d="M16.03 3.2c-6.96 0-12.61 5.65-12.61 12.61 0 2.22.58 4.39 1.68 6.3L3.2 28.8l6.9-1.81a12.55 12.55 0 0 0 5.93 1.51h.01c6.96 0 12.61-5.65 12.61-12.61S22.99 3.2 16.03 3.2zm0 22.99h-.01a10.4 10.4 0 0 1-5.3-1.45l-.38-.22-4.09 1.07 1.09-3.98-.25-.41a10.35 10.35 0 0 1-1.59-5.5c0-5.72 4.66-10.38 10.39-10.38 2.77 0 5.37 1.08 7.33 3.04a10.3 10.3 0 0 1 3.04 7.34c0 5.72-4.66 10.39-10.38 10.39z"/>
   </svg>
   <span>WhatsApp</span>
 </a>
+
 
 </body>
 </html>
