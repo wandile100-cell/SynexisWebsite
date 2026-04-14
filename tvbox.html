@@ -32,13 +32,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 40px;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(6px);
-  flex-wrap: wrap;
+  padding: 20px 40px;
+  background: rgba(2, 6, 23, 0.74);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 50;
+  flex-wrap: wrap;
 }
 
 .brand-wrap {
@@ -48,10 +49,10 @@
 }
 
 .logo-mark {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  background: linear-gradient(135deg, #14b8a6, #22c55e);
   display: grid;
   place-items: center;
   font-weight: bold;
@@ -60,34 +61,24 @@
 
 .brand h1 {
   margin: 0;
+  font-size: 1.5rem;
 }
 
 .brand p {
-  margin: 6px 0 0;
+  margin: 5px 0 0;
   color: #7dd3fc;
+  font-size: 0.95rem;
 }
 
 nav a {
-  color: white;
+  color: #f8fafc;
   text-decoration: none;
   margin-left: 18px;
   font-weight: 500;
 }
 
 nav a:hover {
-  color: #22c55e;
-}
-
-footer {
-  text-align: center;
-  padding: 25px;
-  background: rgba(0,0,0,0.8);
-  margin-top: 60px;
-}
-
-footer p {
-  margin: 6px 0;
-  color: #cbd5e1;
+  color: #99f6e4;
 }
 
 @media (max-width: 700px) {
@@ -100,95 +91,10 @@ footer p {
     margin-top: 14px;
   }
 
-  nav a {
-    margin: 0 14px 0 0;
-    display: inline-block;
-  }
+  nav a.active {
+  color: #99f6e4;
 }
-
-    .brand-wrap { display: flex; align-items: center; gap: 14px; }
-
-    .logo-mark {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      display: grid;
-      place-items: center;
-      font-weight: bold;
-    }
-
-    .brand h1 { margin: 0; }
-    .brand p { margin: 6px 0 0; color: #7dd3fc; }
-
-    nav a { color: white; text-decoration: none; margin-left: 18px; }
-    nav a:hover { color: #22c55e; }
-
-    .container { max-width: 900px; margin: auto; padding: 80px 20px; }
-
-    .card {
-      background: rgba(15, 23, 42, 0.85);
-      border-radius: 20px;
-      padding: 35px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    h2 { margin-top: 0; font-size: 2.2rem; color: #99f6e4; }
-    p { color: var(--muted); line-height: 1.8; }
-    ul { padding-left: 20px; line-height: 1.8; }
-    li { color: #e5e7eb; }
-
-    .btn-row { margin-top: 25px; display: flex; gap: 14px; flex-wrap: wrap; }
-
-    .btn {
-      padding: 14px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      color: white;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: rgba(0,0,0,0.8);
-      margin-top: 60px;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(135deg, #25d366, #1faa52);
-      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
-      font-weight: bold;
-    }
-
-    .whatsapp-float svg { width: 22px; height: 22px; }
-
-    @media (max-width: 600px) {
-      .whatsapp-float span { display: none; }
-      .whatsapp-float {
-        width: 56px;
-        height: 56px;
-        justify-content: center;
-        border-radius: 50%;
-      }
-    }
+}
   </style>
 </head>
 <body>
@@ -203,12 +109,12 @@ footer p {
   </div>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="gallery.html">Gallery</a>
-  </nav>
+  <a href="index.html" class="active">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="gallery.html">Gallery</a>
+</nav>
 </header>
 
 <div class="container">
