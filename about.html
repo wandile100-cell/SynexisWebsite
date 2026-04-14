@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Synexis IT Solutions</title>
+
   <style>
-    
     * { box-sizing: border-box; }
 
     :root {
-      --card: rgba(12, 25, 45, 0.82);
-      --line: rgba(110, 231, 183, 0.18);
+      --bg-1: #020617;
+      --bg-2: #0f172a;
+      --card: rgba(15, 23, 42, 0.82);
+      --line: rgba(148, 163, 184, 0.16);
       --text: #f8fafc;
       --muted: #cbd5e1;
       --primary: #14b8a6;
       --primary-2: #22c55e;
-      --glow: rgba(20, 184, 166, 0.35);
+      --accent: #facc15;
     }
 
     body {
@@ -23,88 +25,24 @@
       font-family: Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(20, 184, 166, 0.18), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.14), transparent 30%),
-        linear-gradient(135deg, #020617, #0f172a);
+        radial-gradient(circle at top left, rgba(20,184,166,0.14), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(34,197,94,0.10), transparent 30%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2));
     }
 
     header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 40px;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(6px);
-  flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-
-.brand-wrap {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.logo-mark {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-2));
-  display: grid;
-  place-items: center;
-  font-weight: bold;
-  color: white;
-}
-
-.brand h1 {
-  margin: 0;
-}
-
-.brand p {
-  margin: 6px 0 0;
-  color: #7dd3fc;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 18px;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: #22c55e;
-}
-
-footer {
-  text-align: center;
-  padding: 25px;
-  background: rgba(0,0,0,0.8);
-  margin-top: 60px;
-}
-
-footer p {
-  margin: 6px 0;
-  color: #cbd5e1;
-}
-
-@media (max-width: 700px) {
-  header {
-    padding: 18px 20px;
-  }
-
-  nav {
-    width: 100%;
-    margin-top: 14px;
-  }
-
-  nav a {
-    margin: 0 14px 0 0;
-    display: inline-block;
-  }
-}
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(2, 6, 23, 0.74);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      flex-wrap: wrap;
+    }
 
     .brand-wrap {
       display: flex;
@@ -113,271 +51,310 @@ footer p {
     }
 
     .logo-mark {
-      width: 52px;
-      height: 52px;
+      width: 54px;
+      height: 54px;
       border-radius: 16px;
       background: linear-gradient(135deg, var(--primary), var(--primary-2));
       display: grid;
       place-items: center;
       font-weight: bold;
       color: white;
-      box-shadow: 0 10px 24px var(--glow);
     }
 
-    .brand h1 {
-      margin: 0;
-      font-size: 1.95rem;
-    }
-
-    .brand p {
-      margin: 6px 0 0;
-      color: #7dd3fc;
-      font-weight: bold;
-      font-size: 0.95rem;
-    }
+    .brand h1 { margin: 0; font-size: 1.5rem; }
+    .brand p { margin: 5px 0 0; color: #7dd3fc; font-size: 0.95rem; }
 
     nav a {
       color: var(--text);
       text-decoration: none;
       margin-left: 18px;
+      font-weight: 500;
     }
 
-    nav a:hover {
-      color: #a7f3d0;
-    }
+    nav a:hover { color: #99f6e4; }
 
     .container {
-      max-width: 950px;
+      max-width: 1100px;
       margin: auto;
-      padding: 60px 20px 80px;
+      padding: 70px 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    .hero h2 {
+      font-size: 2.7rem;
+      margin: 0 0 16px;
+      color: #99f6e4;
+    }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1.03rem;
     }
 
     .panel {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 24px;
-      padding: 34px;
+      padding: 28px;
       box-shadow: 0 18px 34px rgba(0,0,0,0.22);
     }
 
-    h2 {
-      font-size: 2.3rem;
-      margin-top: 0;
-      margin-bottom: 14px;
-    }
-
-    p {
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .highlights {
+    .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 28px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
-    .highlight {
+    .stat {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.05);
       border-radius: 18px;
-      padding: 20px;
+      padding: 18px;
+      text-align: center;
     }
 
-    .highlight h3 {
-      margin-top: 0;
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin: 0 0 12px;
       color: #99f6e4;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #f8fafc;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .cta-box {
+      margin-top: 50px;
+      background: linear-gradient(135deg, rgba(20,184,166,0.18), rgba(34,197,94,0.16));
+      border: 1px solid rgba(153,246,228,0.18);
+      border-radius: 28px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .cta-box p {
+      color: #dbeafe;
+      line-height: 1.8;
+      max-width: 720px;
+      margin: 0 auto 18px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 28px;
       padding: 14px 24px;
       border-radius: 999px;
       text-decoration: none;
       font-weight: bold;
       background: linear-gradient(135deg, var(--primary), var(--primary-2));
       color: white;
-      box-shadow: 0 12px 28px rgba(20,184,166,0.28);
     }
 
     footer {
       text-align: center;
       padding: 30px 20px;
       background: rgba(2, 6, 23, 0.94);
-      color: #cbd5e1;
       border-top: 1px solid rgba(255,255,255,0.05);
     }
 
+    footer p {
+      color: #cbd5e1;
+      margin: 6px 0;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #25d366, #1faa52);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+      font-weight: bold;
+    }
+
+    .whatsapp-float svg { width: 22px; height: 22px; }
+
     @media (max-width: 900px) {
-      header {
-        padding: 20px;
-      }
-      nav {
-        width: 100%;
-        margin-top: 14px;
-      }
-      nav a {
-        margin: 0 14px 0 0;
-        display: inline-block;
+      .hero { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      header { padding: 18px 20px; }
+      nav { width: 100%; margin-top: 14px; }
+      nav a { margin: 0 14px 0 0; display: inline-block; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 2rem; }
+      .stats { grid-template-columns: 1fr; }
+      .whatsapp-float span { display: none; }
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        justify-content: center;
+        border-radius: 50%;
       }
     }
-    .whatsapp-float {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 16px;
-  border-radius: 999px;
-  text-decoration: none;
-  color: white;
-  background: linear-gradient(135deg, #25d366, #1faa52);
-  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
-  font-weight: bold;
-  z-index: 9999;
-  transition: 0.25s;
-}
-
-.whatsapp-float:hover {
-  transform: translateY(-3px);
-}
-
-.whatsapp-float svg {
-  width: 22px;
-  height: 22px;
-}
-
-@media (max-width: 600px) {
-  .whatsapp-float span {
-    display: none;
-  }
-
-  .whatsapp-float {
-    width: 56px;
-    height: 56px;
-    padding: 0;
-    justify-content: center;
-    border-radius: 50%;
-  }
-}
-.whatsapp-float {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 16px;
-  border-radius: 999px;
-  text-decoration: none;
-  color: white;
-  background: linear-gradient(135deg, #25d366, #1faa52);
-  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
-  font-weight: bold;
-  z-index: 9999;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.whatsapp-float:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.45);
-}
-
-.whatsapp-float svg {
-  width: 22px;
-  height: 22px;
-}
-
-@media (max-width: 600px) {
-  .whatsapp-float span {
-    display: none;
-  }
-
-  .whatsapp-float {
-    width: 56px;
-    height: 56px;
-    padding: 0;
-    justify-content: center;
-    border-radius: 50%;
-  }
-
-  .whatsapp-float svg {
-    width: 26px;
-    height: 26px;
-  }
-}
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand-wrap">
-      <div class="logo-mark">SI</div>
-      <div class="brand">
-        <h1>Synexis IT Solutions</h1>
-        <p>Where Technology Meets Security</p>
-      </div>
-    </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="gallery.html">Gallery</a>
-    </nav>
-  </header>
-
-  <div class="container">
-    <div class="panel">
-      <h2>About Us</h2>
-      <p>
-        Synexis IT Solutions provides modern technology and security services for homes and businesses.
-        We focus on reliable installation, practical support, and solutions that help clients stay connected,
-        protected, and in control.
-      </p>
-      <p>
-        Our work includes CCTV installation, networking, alarm systems, smart systems, and general IT support.
-        We believe in neat work, honest service, and delivering results that look professional and perform well.
-      </p>
-
-      <div class="highlights">
-        <div class="highlight">
-          <h3>Reliable Service</h3>
-          <p>We aim to deliver clean, dependable work that customers can trust.</p>
-        </div>
-        <div class="highlight">
-          <h3>Modern Solutions</h3>
-          <p>We combine security and IT to create smarter environments for daily use.</p>
-        </div>
-        <div class="highlight">
-          <h3>Customer Focused</h3>
-          <p>Every job is approached with practical thinking, affordability, and care.</p>
-        </div>
-      </div>
-
-      <a class="btn" href="index.html">Back Home</a>
+<header>
+  <div class="brand-wrap">
+    <div class="logo-mark">SI</div>
+    <div class="brand">
+      <h1>Synexis IT Solutions</h1>
+      <p>Where Technology Meets Security</p>
     </div>
   </div>
 
-  <footer>
-    <p>Synexis IT Solutions • Johannesburg, South Africa</p>
-  </footer>
-  <a class="whatsapp-float" href="https://wa.me/27690682639" target="_blank" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+</header>
+
+<div class="container">
+  <section class="hero">
+    <div>
+      <h2>About Synexis IT Solutions</h2>
+      <p>
+        Synexis IT Solutions provides practical technology and security services for homes,
+        shops, offices, and growing businesses. We focus on clean installations, reliable
+        support, and affordable solutions that help customers stay connected, secure, and in control.
+      </p>
+      <p>
+        Our work includes CCTV installation, networking, alarm systems, TV box setup,
+        game console setup, and home theatre setup. We aim to deliver professional results
+        with honest service and fast customer support.
+      </p>
+    </div>
+
+    <div class="panel">
+      <div class="stats">
+        <div class="stat">
+          <strong>Fast</strong>
+          Same-day communication
+        </div>
+        <div class="stat">
+          <strong>Affordable</strong>
+          Practical pricing
+        </div>
+        <div class="stat">
+          <strong>Clean</strong>
+          Neat installations
+        </div>
+        <div class="stat">
+          <strong>Local</strong>
+          Johannesburg service
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">What We Stand For</h2>
+  <p class="section-subtitle">
+    We believe good service should be reliable, professional, and easy for customers to trust.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Reliable Service</h3>
+      <p>We focus on work that performs well and gives customers confidence in the final result.</p>
+    </div>
+    <div class="card">
+      <h3>Modern Solutions</h3>
+      <p>We combine security and IT support to create smarter environments for everyday use.</p>
+    </div>
+    <div class="card">
+      <h3>Customer First</h3>
+      <p>We value clear communication, fast response times, and practical advice for every job.</p>
+    </div>
+    <div class="card">
+      <h3>Professional Finish</h3>
+      <p>We care about neat cable work, proper setup, and a clean final installation.</p>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h3>Need a quote?</h3>
+    <p>
+      Send us your location, pictures of the area, and the service you need. We’ll respond on WhatsApp with a quick quote.
+    </p>
+    <a class="btn" href="https://wa.me/27690682639?text=Hi%20I%20would%20like%20a%20quote%20for%20your%20services" target="_blank">Chat on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <p>Synexis IT Solutions • Johannesburg, South Africa</p>
+  <p>Call/WhatsApp: 069 068 2639</p>
+  <p>Email: info@synexis.co.za</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/27690682639?text=Hi%20I%20would%20like%20a%20quote%20for%20your%20services" target="_blank">
+  <svg viewBox="0 0 32 32">
     <path fill="currentColor" d="M19.11 17.23c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.62.14-.19.28-.71.9-.87 1.09-.16.19-.33.21-.61.07-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47h-.53c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1 2.72 1.14 2.91c.14.19 1.97 3.01 4.77 4.22.67.29 1.2.46 1.61.59.68.22 1.29.19 1.77.12.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.25-.19-.53-.33z"/>
     <path fill="currentColor" d="M16.03 3.2c-6.96 0-12.61 5.65-12.61 12.61 0 2.22.58 4.39 1.68 6.3L3.2 28.8l6.9-1.81a12.55 12.55 0 0 0 5.93 1.51h.01c6.96 0 12.61-5.65 12.61-12.61S22.99 3.2 16.03 3.2zm0 22.99h-.01a10.4 10.4 0 0 1-5.3-1.45l-.38-.22-4.09 1.07 1.09-3.98-.25-.41a10.35 10.35 0 0 1-1.59-5.5c0-5.72 4.66-10.38 10.39-10.38 2.77 0 5.37 1.08 7.33 3.04a10.3 10.3 0 0 1 3.04 7.34c0 5.72-4.66 10.39-10.38 10.39z"/>
   </svg>
-  <span>WhatsApp Us</span>
+  <span>WhatsApp</span>
 </a>
-<a class="whatsapp-float" href="https://wa.me/27690682639" target="_blank" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path fill="currentColor" d="M19.11 17.23c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.62.14-.19.28-.71.9-.87 1.09-.16.19-.33.21-.61.07-.28-.14-1.2-.44-2.28-1.4-.84-.75-1.41-1.68-1.57-1.96-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47h-.53c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34s1 2.72 1.14 2.91c.14.19 1.97 3.01 4.77 4.22.67.29 1.2.46 1.61.59.68.22 1.29.19 1.77.12.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.25-.19-.53-.33z"/>
-    <path fill="currentColor" d="M16.03 3.2c-6.96 0-12.61 5.65-12.61 12.61 0 2.22.58 4.39 1.68 6.3L3.2 28.8l6.9-1.81a12.55 12.55 0 0 0 5.93 1.51h.01c6.96 0 12.61-5.65 12.61-12.61S22.99 3.2 16.03 3.2zm0 22.99h-.01a10.4 10.4 0 0 1-5.3-1.45l-.38-.22-4.09 1.07 1.09-3.98-.25-.41a10.35 10.35 0 0 1-1.59-5.5c0-5.72 4.66-10.38 10.39-10.38 2.77 0 5.37 1.08 7.33 3.04a10.3 10.3 0 0 1 3.04 7.34c0 5.72-4.66 10.39-10.38 10.39z"/>
-  </svg>
-  <span>WhatsApp Us</span>
-</a>
+
 </body>
 </html>
