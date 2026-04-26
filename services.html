@@ -1,334 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services | Synexis IT Solutions</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Synexis IT Solutions</title>
 
-  <style>
-    :root{
-      --bg-1:#020617;
-      --bg-2:#0f172a;
-      --surface:rgba(15,23,42,.78);
-      --line:rgba(148,163,184,.16);
-      --text:#f8fafc;
-      --muted:#cbd5e1;
-      --primary:#14b8a6;
-      --primary-2:#22c55e;
-      --accent:#facc15;
-      --shadow:0 18px 34px rgba(0,0,0,.22);
-    }
+<style>
+:root{
+  --bg-1:#020617;
+  --bg-2:#0f172a;
+  --surface:rgba(15,23,42,.85);
+  --line:rgba(148,163,184,.16);
+  --text:#f8fafc;
+  --muted:#cbd5e1;
+  --primary:#14b8a6;
+  --primary-2:#22c55e;
+  --accent:#facc15;
+}
 
-    *{box-sizing:border-box}
+*{box-sizing:border-box}
 
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      color:var(--text);
-      background:
-        linear-gradient(rgba(2,6,23,.74),rgba(2,6,23,.9)),
-        url("images/networking.jpg") center/cover no-repeat fixed;
-    }
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.9)),
+    url("images/networking.jpg") center/cover no-repeat fixed;
+}
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      padding:20px 40px;
-      background:rgba(2,6,23,.74);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.05);
-      position:sticky;
-      top:0;
-      z-index:50;
-      flex-wrap:wrap;
-    }
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:rgba(2,6,23,.8);
+  backdrop-filter:blur(10px);
+}
 
-    .brand-wrap{display:flex;align-items:center;gap:14px}
+.logo-mark{
+  width:50px;height:50px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  display:grid;place-items:center;
+  font-weight:bold;
+}
 
-    .logo-mark{
-      width:54px;
-      height:54px;
-      border-radius:16px;
-      background:linear-gradient(135deg,var(--primary),var(--primary-2));
-      display:grid;
-      place-items:center;
-      font-weight:bold;
-      color:white;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:10px;
+  padding:8px 14px;
+  border-radius:20px;
+}
 
-    .brand h1{margin:0;font-size:1.5rem}
-    .brand p{margin:5px 0 0;color:#7dd3fc;font-size:.95rem}
+nav a.active{
+  background:linear-gradient(135deg,var(--primary),var(--primary-2));
+}
 
-    nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+/* MAIN */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
 
-    nav a{
-      color:var(--text);
-      text-decoration:none;
-      font-weight:500;
-      padding:10px 14px;
-      border-radius:999px;
-      transition:.25s ease;
-    }
+.section-title{
+  text-align:center;
+  color:#99f6e4;
+  margin-bottom:10px;
+}
 
-    nav a:hover{
-      color:#99f6e4;
-      background:rgba(255,255,255,.05);
-    }
+.section-subtitle{
+  text-align:center;
+  color:var(--muted);
+  margin-bottom:40px;
+}
 
-    nav a.active{
-      color:#fff;
-      background:linear-gradient(135deg,var(--primary),var(--primary-2));
-    }
+/* SERVICES GRID */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:24px;
+}
 
-    .container{
-      max-width:1200px;
-      margin:auto;
-      padding:70px 20px;
-    }
+.card-link{
+  grid-column:span 2;
+  text-decoration:none;
+  color:inherit;
+}
 
-    .section-title{
-      text-align:center;
-      font-size:2.3rem;
-      margin:0 0 10px;
-      color:#99f6e4;
-    }
+.card-link:nth-child(4){
+  grid-column:2 / span 2;
+}
+.card-link:nth-child(5){
+  grid-column:4 / span 2;
+}
 
-    .section-subtitle{
-      text-align:center;
-      color:var(--muted);
-      max-width:760px;
-      margin:0 auto 40px;
-      line-height:1.8;
-    }
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  transition:.2s;
+}
 
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(6,1fr);
-      gap:24px;
-    }
+.card:hover{
+  transform:translateY(-5px);
+}
 
-    .card-link{
-      text-decoration:none;
-      color:inherit;
-      grid-column:span 2;
-    }
+.icon{
+  font-size:1.5rem;
+  margin-bottom:10px;
+}
 
-    .card-link:nth-child(4){
-      grid-column:2 / span 2;
-    }
-
-    .card-link:nth-child(5){
-      grid-column:4 / span 2;
-    }
-
-    .card{
-      height:100%;
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:26px;
-      box-shadow:var(--shadow);
-      transition:.25s ease;
-    }
-
-    .card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(34,197,94,.35);
-    }
-
-    .icon{
-      width:54px;
-      height:54px;
-      border-radius:16px;
-      display:grid;
-      place-items:center;
-      margin-bottom:16px;
-      background:rgba(20,184,166,.12);
-      font-size:1.4rem;
-    }
-
-    .card h3{
-      margin:0 0 12px;
-      color:#f8fafc;
-    }
-
-    .card p{
-      color:var(--muted);
-      line-height:1.7;
-      margin:0 0 18px;
-    }
-
-    .card span{
+.card span{
   color:#99f6e4;
   font-weight:bold;
 }
 
+/* PRICING */
 .pricing-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,300px));
   justify-content:center;
   gap:24px;
-  margin-top:40px;
 }
 
 .price-card{
-  background:rgba(15,23,42
+  background:var(--surface);
+  border-radius:20px;
+  padding:24px;
+  text-align:center;
+}
 
-    footer{
-      text-align:center;
-      padding:30px 20px;
-      background:rgba(2,6,23,.94);
-      border-top:1px solid rgba(255,255,255,.05);
-    }
+.price{
+  font-size:2rem;
+  color:var(--accent);
+  margin:10px 0;
+}
 
-    footer p{
-      color:#cbd5e1;
-      margin:6px 0;
-    }
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    @media(max-width:1000px){
-      .services-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
+/* MOBILE */
+@media(max-width:1000px){
+  .services-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .card-link,
+  .card-link:nth-child(4),
+  .card-link:nth-child(5){
+    grid-column:auto;
+  }
+}
 
-      .card-link,
-      .card-link:nth-child(4),
-      .card-link:nth-child(5){
-        grid-column:auto;
-      }
-    }
-
-    @media(max-width:650px){
-      header{padding:18px 20px}
-      nav{width:100%;margin-top:14px}
-      .services-grid{grid-template-columns:1fr}
-    }
-  </style>
+@media(max-width:600px){
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="brand-wrap">
-    <div class="logo-mark">SI</div>
-    <div class="brand">
-      <h1>Synexis IT Solutions</h1>
-      <p>Where Technology Meets Security</p>
-    </div>
-  </div>
-
+  <div class="logo-mark">SI</div>
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html" class="active">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="gallery.html">Gallery</a>
   </nav>
 </header>
 
 <div class="container">
-  <h2 class="section-title">Our Services</h2>
-  <p class="section-subtitle">
-    Choose a service below. We provide fast WhatsApp quotes for homes and businesses.
-  </p>
+<h2 class="section-title">Our Services</h2>
+<p class="section-subtitle">Choose a service below</p>
 
-  <div class="services-grid">
-    <a class="card-link" href="cctv.html">
-      <div class="card">
-        <div class="icon">📷</div>
-        <h3>CCTV Installation</h3>
-        <p>Camera installation, setup, remote viewing, and monitoring support.</p>
-        <span>View details</span>
-      </div>
-    </a>
+<div class="services-grid">
 
-    <a class="card-link" href="networking.html">
-      <div class="card">
-        <div class="icon">📶</div>
-        <h3>Networking</h3>
-        <p>Wi-Fi setup, routers, cabling, internet support, and troubleshooting.</p>
-        <span>View details</span>
-      </div>
-    </a>
+<a class="card-link" href="cctv.html">
+<div class="card">
+<div class="icon">📷</div>
+<h3>CCTV Installation</h3>
+<p>Camera setup and monitoring</p>
+<span>View details</span>
+</div>
+</a>
 
-    <a class="card-link" href="smarthome.html">
-      <div class="card">
-        <div class="icon">🏠</div>
-        <h3>Smart Home Setup</h3>
-        <p>Smart lights, plugs, automation, app control, Google Home, and Alexa setup.</p>
-        <span>View details</span>
-      </div>
-    </a>
+<a class="card-link" href="networking.html">
+<div class="card">
+<div class="icon">📶</div>
+<h3>Networking</h3>
+<p>WiFi, routers and cabling</p>
+<span>View details</span>
+</div>
+</a>
 
-    <a class="card-link" href="alarm.html">
-      <div class="card">
-        <div class="icon">🛡️</div>
-        <h3>Alarm Systems</h3>
-        <p>Security alarms, sensors, and basic alarm system configuration.</p>
-        <span>View details</span>
-      </div>
-    </a>
+<a class="card-link" href="smarthome.html">
+<div class="card">
+<div class="icon">🏠</div>
+<h3>Smart Home</h3>
+<p>Automation and smart devices</p>
+<span>View details</span>
+</div>
+</a>
 
-    <a class="card-link" href="entertainment.html">
-      <div class="card">
-        <div class="icon">🎬</div>
-        <h3>Home Entertainment Setup</h3>
-        <p>TV box, game console, and home theatre setup with clean installation.</p>
-        <span>View details</span>
-      </div>
-    </a>
-  </div>
+<a class="card-link" href="alarm.html">
+<div class="card">
+<div class="icon">🛡️</div>
+<h3>Alarm Systems</h3>
+<p>Security and protection</p>
+<span>View details</span>
+</div>
+</a>
 
-  <h2 class="section-title" style="margin-top:70px;">Starting Prices</h2>
-  <p class="section-subtitle">
-    These are guide prices. Final quote depends on equipment, travel, and job size.
-  </p>
+<a class="card-link" href="entertainment.html">
+<div class="card">
+<div class="icon">🎬</div>
+<h3>Home Entertainment</h3>
+<p>TV, gaming and theatre setup</p>
+<span>View details</span>
+</div>
+</a>
 
-  <div class="pricing-grid">
-    <div class="price-card">
-      <h3>CCTV Installation</h3>
-      <div class="price">From R1500</div>
-      <a class="btn" href="https://wa.me/27690682639?text=Hi%20I%20need%20a%20CCTV%20installation%20quote" target="_blank">Ask on WhatsApp</a>
-    </div>
-
-    <div class="price-card">
-      <h3>Alarm Systems</h3>
-      <div class="price">From R1200</div>
-      <a class="btn" href="https://wa.me/27690682639?text=Hi%20I%20need%20an%20Alarm%20system%20quote" target="_blank">Ask on WhatsApp</a>
-    </div>
-
-    <div class="price-card">
-      <h3>Smart Home Setup</h3>
-      <div class="price">From R900</div>
-      <a class="btn" href="https://wa.me/27690682639?text=Hi%20I%20need%20Smart%20Home%20setup" target="_blank">Ask on WhatsApp</a>
-    </div>
-
-    <div class="price-card">
-      <h3>Networking</h3>
-      <div class="price">From R800</div>
-      <a class="btn" href="https://wa.me/27690682639?text=Hi%20I%20need%20Networking%20help" target="_blank">Ask on WhatsApp</a>
-    </div>
-
-    <div class="price-card">
-      <h3>Home Entertainment</h3>
-      <div class="price">From R500</div>
-      <a class="btn" href="https://wa.me/27690682639?text=Hi%20I%20need%20Home%20Entertainment%20setup" target="_blank">Ask on WhatsApp</a>
-    </div>
-  </div>
-
-  <div style="text-align:center;margin-top:50px;">
-    <a class="btn" href="index.html">Back Home</a>
-  </div>
 </div>
 
-<footer>
-  <p>Synexis IT Solutions • Johannesburg, South Africa</p>
-  <p>Call/WhatsApp: 069 068 2639 / 067 211 9335</p>
-  <p>Email: info@synexis.co.za</p>
-</footer>
+<h2 class="section-title" style="margin-top:60px;">Starting Prices</h2>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+<h3>CCTV</h3>
+<div class="price">R1500</div>
+<a class="btn" href="#">WhatsApp</a>
+</div>
+
+<div class="price-card">
+<h3>Alarm</h3>
+<div class="price">R1200</div>
+<a class="btn" href="#">WhatsApp</a>
+</div>
+
+<div class="price-card">
+<h3>Smart Home</h3>
+<div class="price">R900</div>
+<a class="btn" href="#">WhatsApp</a>
+</div>
+
+<div class="price-card">
+<h3>Networking</h3>
+<div class="price">R800</div>
+<a class="btn" href="#">WhatsApp</a>
+</div>
+
+<div class="price-card">
+<h3>Entertainment</h3>
+<div class="price">R500</div>
+<a class="btn" href="#">WhatsApp</a>
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
-   
