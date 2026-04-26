@@ -7,8 +7,6 @@
 
 <style>
 :root{
-  --bg-1:#020617;
-  --bg-2:#0f172a;
   --surface:rgba(15,23,42,.85);
   --line:rgba(148,163,184,.16);
   --text:#f8fafc;
@@ -26,7 +24,7 @@ body{
   color:var(--text);
   background:
     linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.9)),
-    url("images/networking.jpg") center/cover no-repeat fixed;
+    url("images/bg.jpg") center/cover no-repeat fixed;
 }
 
 /* HEADER */
@@ -37,15 +35,27 @@ header{
   padding:20px 40px;
   background:rgba(2,6,23,.8);
   backdrop-filter:blur(10px);
+  flex-wrap:wrap;
+}
+
+.brand-wrap{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 
 .logo-mark{
-  width:50px;height:50px;
+  width:50px;
+  height:50px;
   border-radius:14px;
   background:linear-gradient(135deg,var(--primary),var(--primary-2));
-  display:grid;place-items:center;
+  display:grid;
+  place-items:center;
   font-weight:bold;
 }
+
+.brand h1{margin:0;font-size:1.5rem}
+.brand p{margin:5px 0 0;color:#7dd3fc}
 
 nav a{
   color:white;
@@ -103,7 +113,7 @@ nav a.active{
   border:1px solid var(--line);
   border-radius:20px;
   padding:24px;
-  transition:.2s;
+  transition:.25s;
 }
 
 .card:hover{
@@ -120,16 +130,16 @@ nav a.active{
   font-weight:bold;
 }
 
-/* PRICING */
+/* PRICING (MATCH INDEX PAGE) */
 .pricing-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,300px));
-  justify-content:center;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:24px;
 }
 
 .price-card{
   background:var(--surface);
+  border:1px solid var(--line);
   border-radius:20px;
   padding:24px;
   text-align:center;
@@ -141,7 +151,6 @@ nav a.active{
   margin:10px 0;
 }
 
-/* BUTTON */
 .btn{
   display:inline-block;
   padding:12px 20px;
@@ -152,11 +161,20 @@ nav a.active{
   font-weight:bold;
 }
 
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  background:rgba(2,6,23,.94);
+  margin-top:60px;
+}
+
 /* MOBILE */
 @media(max-width:1000px){
   .services-grid{
     grid-template-columns:repeat(2,1fr);
   }
+
   .card-link,
   .card-link:nth-child(4),
   .card-link:nth-child(5){
@@ -168,6 +186,11 @@ nav a.active{
   .services-grid{
     grid-template-columns:1fr;
   }
+
+  nav{
+    width:100%;
+    margin-top:10px;
+  }
 }
 </style>
 </head>
@@ -175,14 +198,25 @@ nav a.active{
 <body>
 
 <header>
-  <div class="logo-mark">SI</div>
+  <div class="brand-wrap">
+    <div class="logo-mark">SI</div>
+    <div class="brand">
+      <h1>Synexis IT Solutions</h1>
+      <p>Where Technology Meets Security</p>
+    </div>
+  </div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html" class="active">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
   </nav>
 </header>
 
 <div class="container">
+
 <h2 class="section-title">Our Services</h2>
 <p class="section-subtitle">Choose a service below</p>
 
@@ -241,37 +275,41 @@ nav a.active{
 
 <div class="price-card">
 <h3>CCTV</h3>
-<div class="price">R1500</div>
-<a class="btn" href="#">WhatsApp</a>
+<div class="price">R1500+</div>
+<a class="btn" href="https://wa.me/27690682639">WhatsApp</a>
 </div>
 
 <div class="price-card">
 <h3>Alarm</h3>
-<div class="price">R1200</div>
-<a class="btn" href="#">WhatsApp</a>
+<div class="price">R1200+</div>
+<a class="btn" href="https://wa.me/27690682639">WhatsApp</a>
 </div>
 
 <div class="price-card">
 <h3>Smart Home</h3>
-<div class="price">R900</div>
-<a class="btn" href="#">WhatsApp</a>
+<div class="price">R900+</div>
+<a class="btn" href="https://wa.me/27690682639">WhatsApp</a>
 </div>
 
 <div class="price-card">
 <h3>Networking</h3>
-<div class="price">R800</div>
-<a class="btn" href="#">WhatsApp</a>
+<div class="price">R800+</div>
+<a class="btn" href="https://wa.me/27690682639">WhatsApp</a>
 </div>
 
 <div class="price-card">
 <h3>Entertainment</h3>
-<div class="price">R500</div>
-<a class="btn" href="#">WhatsApp</a>
+<div class="price">R500+</div>
+<a class="btn" href="https://wa.me/27690682639">WhatsApp</a>
 </div>
 
 </div>
 
 </div>
+
+<footer>
+<p>Synexis IT Solutions • Johannesburg</p>
+</footer>
 
 </body>
 </html>
