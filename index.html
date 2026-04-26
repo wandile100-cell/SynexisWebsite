@@ -31,6 +31,15 @@
         radial-gradient(circle at bottom right, rgba(34,197,94,.10), transparent 30%),
         linear-gradient(135deg,var(--bg-1),var(--bg-2));
     }
+    body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:var(--text);
+
+  background:
+    linear-gradient(rgba(2,6,23,.75), rgba(2,6,23,.9)),
+    url("images/bg.jpg") center/cover no-repeat fixed;
+}
 
     header{
       display:flex;
@@ -179,14 +188,12 @@
       margin:0 auto 34px;
     }
 
-    .services-grid,
-    .pricing-grid,
-    .trust-grid,
-    .testimonials-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:22px;
-    }
+    ..services-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 300px));
+  justify-content:center;
+  gap:24px;
+}
 
     .card,
     .price-card,
@@ -413,7 +420,7 @@
           <span>From R800</span>
         </div>
         <div class="hero-item">
-          <span>Home Theatre Setup</span>
+          <span>Home Entertainment Setup</span>
           <span>From R1000</span>
         </div>
       </div>
@@ -455,18 +462,10 @@
         <p>Security alarm installation and basic configuration for homes and offices.</p>
         <a href="alarm.html">View details</a>
       </div>
-
-      <div class="card">
-        <div class="card-icon">📺</div>
-        <h3>TV Box Setup</h3>
-        <p>Android TV box, streaming device setup, and connection support.</p>
-        <a href="tvbox.html">View details</a>
-      </div>
-
       <div class="card">
         <div class="card-icon">🎮</div>
         <h3>Home Entertainment Setup</h3>
-<p>TV box, game console, and home theatre setup with clean, professional installation.</p>
+<p>smart home setup and complete home entertainment setup.</p>
         <a href="entertainment.html">View details</a>
       </div>
     </div>
