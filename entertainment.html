@@ -4,537 +4,245 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home Entertainment Setup | Synexis IT Solutions</title>
+
 <style>
-    :root{
-      --bg-1:#020617;
-      --bg-2:#0f172a;
-      --surface:rgba(15,23,42,.78);
-      --line:rgba(148,163,184,.16);
-      --text:#f8fafc;
-      --muted:#cbd5e1;
-      --primary:#14b8a6;
-      --primary-2:#22c55e;
-      --accent:#facc15;
-      --shadow:0 18px 34px rgba(0,0,0,.22);
-    }
+:root{
+  --surface:rgba(15,23,42,.85);
+  --line:rgba(148,163,184,.16);
+  --text:#f8fafc;
+  --muted:#cbd5e1;
+  --primary:#14b8a6;
+  --primary-2:#22c55e;
+  --accent:#facc15;
+}
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+*{box-sizing:border-box}
 
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(20,184,166,.14), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(34,197,94,.10), transparent 30%),
-        linear-gradient(135deg,var(--bg-1),var(--bg-2));
-    }
-    body {
+body{
   margin:0;
   font-family:Arial,sans-serif;
   color:var(--text);
-
   background:
-    linear-gradient(rgba(2,6,23,.75), rgba(2,6,23,.9)),
-    url("images/bg.jpg") center/cover no-repeat fixed;
+    linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.9)),
+    url("images/theatre.jpg") center/cover no-repeat fixed;
 }
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
-      padding:20px 40px;
-      background:rgba(2,6,23,.74);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.05);
-      position:sticky;
-      top:0;
-      z-index:50;
-      flex-wrap:wrap;
-    }
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:rgba(2,6,23,.8);
+}
 
-    .brand-wrap{display:flex;align-items:center;gap:14px}
+.logo-mark{
+  width:50px;height:50px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  display:grid;place-items:center;
+  font-weight:bold;
+}
 
-    .logo-mark{
-      width:54px;
-      height:54px;
-      border-radius:16px;
-      background:linear-gradient(135deg,var(--primary),var(--primary-2));
-      display:grid;
-      place-items:center;
-      font-weight:bold;
-      color:white;
-      box-shadow:0 12px 28px rgba(20,184,166,.28);
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:10px;
+  padding:8px 14px;
+  border-radius:20px;
+}
 
-    .brand h1{margin:0;font-size:1.5rem}
-    .brand p{margin:5px 0 0;color:#7dd3fc;font-size:.95rem}
+nav a.active{
+  background:linear-gradient(135deg,var(--primary),var(--primary-2));
+}
 
-    nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+/* LAYOUT */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
 
-    nav a{
-      color:var(--text);
-      text-decoration:none;
-      font-weight:500;
-      padding:10px 14px;
-      border-radius:999px;
-      transition:.25s ease;
-    }
-
-    nav a:hover{
-      color:#99f6e4;
-      background:rgba(255,255,255,.05);
-    }
-
-    nav a.active{
-      color:#fff;
-      background:linear-gradient(135deg,var(--primary),var(--primary-2));
-    }
-
-    .container{
-      max-width:1200px;
-      margin:auto;
-      padding:70px 20px;
-    }
-
-    .hero{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:30px;
-      align-items:center;
-    }
-
-    .hero-badge{
-      display:inline-block;
-      padding:8px 14px;
-      border-radius:999px;
-      background:rgba(20,184,166,.12);
-      border:1px solid rgba(20,184,166,.25);
-      color:#99f6e4;
-      font-size:.92rem;
-      margin-bottom:16px;
-    }
-
-    .hero h2{
-      font-size:3rem;
-      line-height:1.1;
-      margin:0 0 16px;
-      color:#99f6e4;
-    }
-
-    .hero p,
-    .section-subtitle,
-    .muted{
-      color:var(--muted);
-      line-height:1.8;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:22px;
-    }
-
-    .panel,
-    .card,
-    .price-card,
-    .testimonial-card{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:24px;
-      box-shadow:var(--shadow);
-    }
-
-    .hero-list{
-      display:grid;
-      gap:12px;
-    }
-
-    .hero-item{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      padding:14px 16px;
-      border-radius:16px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.05);
-    }
-
-    .hero-item span:last-child{
-      color:var(--accent);
-      font-weight:bold;
-      white-space:nowrap;
-    }
-
-    .section{
-      padding-top:60px;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:2.2rem;
-      margin:0 0 10px;
-      color:#99f6e4;
-    }
-
-    .section-subtitle{
-      text-align:center;
-      max-width:760px;
-      margin:0 auto 34px;
-    }
-
-    .services-grid{
+.hero{
   display:grid;
-  grid-template-columns:repeat(6, 1fr);
-  gap:24px;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
 }
 
-.services-grid .card{
-  grid-column:span 2;
+.panel{
+  background:var(--surface);
+  border-radius:20px;
+  padding:24px;
 }
 
-.services-grid .card:nth-child(4){
-  grid-column:2 / span 2;
+/* LIST */
+.list{
+  padding-left:20px;
+  line-height:1.8;
+  color:var(--muted);
 }
 
-.services-grid .card:nth-child(5){
-  grid-column:4 / span 2;
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-@media(max-width:1000px){
-  .services-grid{
-    grid-template-columns:repeat(2, 1fr);
-  }
-
-  .services-grid .card,
-  .services-grid .card:nth-child(4),
-  .services-grid .card:nth-child(5){
-    grid-column:auto;
-  }
+.btn-primary{
+  background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  color:white;
 }
 
-@media(max-width:650px){
-  .services-grid{
+.btn-secondary{
+  border:1px solid var(--line);
+  color:white;
+}
+
+.btn-row{
+  margin-top:20px;
+  display:flex;
+  gap:10px;
+}
+
+/* PRICING */
+.price-card{
+  background:var(--surface);
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:15px;
+}
+
+.price{
+  font-size:1.6rem;
+  color:var(--accent);
+}
+
+/* GRID */
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--surface);
+  padding:20px;
+  border-radius:20px;
+}
+
+.card-icon{
+  font-size:1.5rem;
+  margin-bottom:10px;
+}
+
+/* CTA */
+.cta-box{
+  margin-top:50px;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  .hero{
     grid-template-columns:1fr;
   }
 }
-
-@media(max-width:1000px){
-  .services-grid{
-    grid-template-columns:repeat(2, minmax(260px, 300px));
-  }
-
-  .services-grid .card:nth-child(4),
-  .services-grid .card:nth-child(5){
-    grid-column:auto;
-  }
-}
-
-@media(max-width:650px){
-  .services-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-    .card,
-    .price-card,
-    .testimonial-card{
-      transition:.25s ease;
-    }
-
-    .card:hover,
-    .price-card:hover,
-    .testimonial-card:hover{
-      transform:translateY(-6px);
-    }
-
-    .card-icon{
-      width:54px;
-      height:54px;
-      border-radius:16px;
-      display:grid;
-      place-items:center;
-      margin-bottom:16px;
-      background:rgba(20,184,166,.12);
-      color:#99f6e4;
-      font-size:1.3rem;
-    }
-
-    .card h3,
-    .price-card h3,
-    .testimonial-card h3{
-      margin-top:0;
-      color:#f8fafc;
-    }
-
-    .card p,
-    .price-card p,
-    .testimonial-card p{
-      color:var(--muted);
-      line-height:1.7;
-    }
-
-    .card a{
-      color:#99f6e4;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    .price{
-      font-size:2rem;
-      font-weight:bold;
-      color:var(--accent);
-      margin:12px 0;
-    }
-
-    .btn,
-    .price-btn{
-      display:inline-block;
-      padding:14px 24px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:.25s ease;
-    }
-
-    .btn-primary,
-    .price-btn{
-      background:linear-gradient(135deg,var(--primary),var(--primary-2));
-      color:white;
-      box-shadow:0 12px 28px rgba(20,184,166,.24);
-    }
-
-    .btn-secondary{
-      color:white;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.03);
-    }
-
-    .btn:hover,
-    .price-btn:hover{
-      transform:translateY(-2px);
-    }
-
-    .google-box,
-    .cta-box{
-      margin-top:60px;
-      background:linear-gradient(135deg,rgba(20,184,166,.18),rgba(34,197,94,.16));
-      border:1px solid rgba(153,246,228,.18);
-      border-radius:28px;
-      padding:30px;
-      text-align:center;
-      box-shadow:var(--shadow);
-    }
-
-    .google-box h3,
-    .cta-box h3{
-      margin-top:0;
-      font-size:2rem;
-    }
-
-    .google-box p,
-    .cta-box p{
-      color:#dbeafe;
-      max-width:760px;
-      margin:0 auto 18px;
-      line-height:1.8;
-    }
-
-    footer{
-      text-align:center;
-      padding:30px 20px;
-      background:rgba(2,6,23,.94);
-      border-top:1px solid rgba(255,255,255,.05);
-    }
-
-    footer p{
-      color:#cbd5e1;
-      margin:6px 0;
-    }
-
-    .whatsapp-float{
-      position:fixed;
-      right:20px;
-      bottom:20px;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:999px;
-      text-decoration:none;
-      color:white;
-      background:linear-gradient(135deg,#25d366,#1faa52);
-      box-shadow:0 12px 28px rgba(37,211,102,.35);
-      font-weight:bold;
-      z-index:100;
-    }
-
-    .whatsapp-float svg{
-      width:22px;
-      height:22px;
-    }
-
-    @media(max-width:920px){
-      .hero{grid-template-columns:1fr}
-      .hero h2{font-size:2.35rem}
-    }
-
-    @media(max-width:700px){
-      header{padding:18px 20px}
-      nav{width:100%;margin-top:14px}
-      nav a{padding:10px 12px}
-    }
-
-    @media(max-width:600px){
-      .hero h2,.section-title{font-size:2rem}
-      .whatsapp-float span{display:none}
-      .whatsapp-float{
-        width:56px;
-        height:56px;
-        justify-content:center;
-        border-radius:50%;
-      }
-    }
-  </style>
+</style>
 </head>
 
-<body class="has-image-bg">
+<body>
 
 <header>
-  <div class="brand-wrap">
-    <div class="logo-mark">SI</div>
-    <div class="brand">
-      <h1>Synexis IT Solutions</h1>
-      <p>Where Technology Meets Security</p>
-    </div>
-  </div>
-
+  <div class="logo-mark">SI</div>
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html" class="active">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="gallery.html">Gallery</a>
   </nav>
 </header>
 
 <div class="container">
-  <section class="hero">
-    <div class="panel">
-      <h2 style="margin-top:0;color:#99f6e4;">Home Entertainment Setup</h2>
 
-      <p>
-        We help you set up your full entertainment system properly — from TV boxes
-        and game consoles to home theatre sound systems and neat cable management.
-      </p>
+<section class="hero">
 
-      <ul class="list">
-        <li>Android TV box setup</li>
-        <li>Streaming apps and internet connection</li>
-        <li>PlayStation and Xbox setup</li>
-        <li>Home theatre sound setup</li>
-        <li>TV, HDMI, and audio connection</li>
-        <li>Neat cable management</li>
-        <li>Basic user guidance after setup</li>
-      </ul>
+<div class="panel">
+<h2>Home Entertainment Setup</h2>
 
-      <div class="btn-row">
-        <a class="btn btn-primary" href="https://wa.me/27690682639?text=Hi%20I%20need%20a%20Home%20Entertainment%20setup%20quote" target="_blank">
-          Get Entertainment Quote
-        </a>
-        <a class="btn btn-secondary" href="services.html">
-          Back to Services
-        </a>
-      </div>
+<p>
+We set up your full entertainment system properly — TV box, consoles,
+and home theatre with clean cable management.
+</p>
 
-      <p class="small-note">⚡ Fast response on WhatsApp</p>
-    </div>
+<ul class="list">
+<li>TV box & streaming setup</li>
+<li>PlayStation / Xbox setup</li>
+<li>Home theatre sound system</li>
+<li>HDMI & device connections</li>
+<li>Neat cable management</li>
+</ul>
 
-    <div class="panel">
-      <h3 style="margin-top:0;color:#99f6e4;">Entertainment Packages</h3>
+<div class="btn-row">
+<a class="btn btn-primary" href="https://wa.me/27690682639">Get Quote</a>
+<a class="btn btn-secondary" href="services.html">Back</a>
+</div>
 
-      <div class="pricing-grid" style="grid-template-columns:1fr;">
-        <div class="price-card">
-          <h3>Basic Setup</h3>
-          <div class="price">From R500</div>
-          <p class="muted">TV box setup, internet connection, and basic app setup.</p>
-          <a class="price-btn" href="https://wa.me/27690682639?text=Hi%20I%20need%20the%20Basic%20Entertainment%20Setup" target="_blank">Ask on WhatsApp</a>
-        </div>
+</div>
 
-        <div class="price-card">
-          <h3>Standard Setup</h3>
-          <div class="price">From R900</div>
-          <p class="muted">TV box plus game console setup and connection support.</p>
-          <a class="price-btn" href="https://wa.me/27690682639?text=Hi%20I%20need%20the%20Standard%20Entertainment%20Setup" target="_blank">Ask on WhatsApp</a>
-        </div>
+<div class="panel">
+<h3>Packages</h3>
 
-        <div class="price-card">
-          <h3>Premium Setup</h3>
-          <div class="price">From R1500</div>
-          <p class="muted">Home theatre, TV, sound, console, and cable management setup.</p>
-          <a class="price-btn" href="https://wa.me/27690682639?text=Hi%20I%20need%20the%20Premium%20Home%20Entertainment%20Setup" target="_blank">Ask on WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="price-card">
+<h3>Basic</h3>
+<div class="price">R500+</div>
+<p>TV box setup</p>
+</div>
 
-  <section style="padding-top:60px;">
-    <h2 class="section-title">Why Choose Our Entertainment Setup?</h2>
-    <p class="section-subtitle">
-      We make sure your devices are connected properly, arranged neatly, and ready to use.
-    </p>
+<div class="price-card">
+<h3>Standard</h3>
+<div class="price">R900+</div>
+<p>TV box + console</p>
+</div>
 
-    <div class="trust-grid">
-      <div class="card">
-        <div class="card-icon">📺</div>
-        <h3>TV & Streaming</h3>
-        <p>We connect and configure TV boxes, streaming devices, and internet access.</p>
-      </div>
+<div class="price-card">
+<h3>Premium</h3>
+<div class="price">R1500+</div>
+<p>Full home theatre setup</p>
+</div>
 
-      <div class="card">
-        <div class="card-icon">🎮</div>
-        <h3>Console Setup</h3>
-        <p>PlayStation and Xbox setup with HDMI, internet, and basic settings support.</p>
-      </div>
+</div>
 
-      <div class="card">
-        <div class="card-icon">🔊</div>
-        <h3>Sound Setup</h3>
-        <p>Home theatre and sound system connection for better audio experience.</p>
-      </div>
+</section>
 
-      <div class="card">
-        <div class="card-icon">🧰</div>
-        <h3>Neat Finish</h3>
-        <p>We help arrange devices neatly with practical cable management.</p>
-      </div>
-    </div>
-  </section>
+<section style="margin-top:50px;">
+<h2>Why Choose Us</h2>
 
-  <div class="cta-box">
-    <h3>Need your entertainment system set up?</h3>
-    <p>
-      Send us your device list, location, and pictures of the setup area for a quick quote.
-    </p>
-    <a class="btn btn-primary" href="https://wa.me/27690682639?text=Hi%20I%20need%20help%20with%20Home%20Entertainment%20setup" target="_blank">
-      Chat on WhatsApp
-    </a>
-  </div>
+<div class="trust-grid">
+<div class="card"><div class="card-icon">📺</div>TV Setup</div>
+<div class="card"><div class="card-icon">🎮</div>Console Setup</div>
+<div class="card"><div class="card-icon">🔊</div>Sound Setup</div>
+<div class="card"><div class="card-icon">🧰</div>Neat Work</div>
+</div>
+
+</section>
+
+<div class="cta-box">
+<h3>Need help today?</h3>
+<a class="btn btn-primary" href="https://wa.me/27690682639">WhatsApp Us</a>
+</div>
+
 </div>
 
 <footer>
-  <p>Synexis IT Solutions • Johannesburg, South Africa</p>
-  <p>Call/WhatsApp: 069 068 2639 / 067 211 9335</p>
-  <p>Email: info@synexis.co.za</p>
+<p>Synexis IT Solutions • Johannesburg</p>
 </footer>
-
-<a class="whatsapp-float" href="https://wa.me/27690682639?text=Hi%20I%20need%20a%20Home%20Entertainment%20setup%20quote" target="_blank">
-  <span>WhatsApp</span>
-</a>
 
 </body>
 </html>
