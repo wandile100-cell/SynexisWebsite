@@ -188,11 +188,19 @@
       margin:0 auto 34px;
     }
 
-    .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
-  justify-content: center;   /* 🔥 centers LAST ROW */
-  gap: 22px;
+    .services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 300px));
+  justify-content:center;
+  gap:24px;
+}
+
+.pricing-grid,
+.trust-grid,
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:22px;
 }
 
     .card,
