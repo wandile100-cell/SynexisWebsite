@@ -190,17 +190,35 @@
 
     .services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px, 300px));
+  grid-template-columns:repeat(3, minmax(260px, 300px));
   justify-content:center;
   gap:24px;
 }
 
-.pricing-grid,
-.trust-grid,
-.testimonials-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
-  gap:22px;
+/* Center the last row when there are 5 service cards */
+.services-grid .card:nth-child(4){
+  grid-column:1 / 2;
+}
+
+.services-grid .card:nth-child(5){
+  grid-column:2 / 3;
+}
+
+@media(max-width:1000px){
+  .services-grid{
+    grid-template-columns:repeat(2, minmax(260px, 300px));
+  }
+
+  .services-grid .card:nth-child(4),
+  .services-grid .card:nth-child(5){
+    grid-column:auto;
+  }
+}
+
+@media(max-width:650px){
+  .services-grid{
+    grid-template-columns:1fr;
+  }
 }
 
     .card,
