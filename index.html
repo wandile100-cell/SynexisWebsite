@@ -184,10 +184,62 @@ footer{
 
 /* MOBILE */
 @media(max-width:800px){
-  .hero{grid-template-columns:1fr}
+  header{
+    padding:16px 18px;
+  }
+
+  .brand-wrap{
+    width:100%;
+  }
+
+  .brand h1{
+    font-size:1.2rem;
+  }
+
+  .brand p{
+    font-size:.85rem;
+  }
+
+  nav{
+    width:100%;
+    margin-top:14px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  nav a{
+    margin-left:0;
+    padding:8px 12px;
+    font-size:.9rem;
+  }
+
+  .container{
+    padding:40px 16px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .hero h2{
+    font-size:2rem;
+    line-height:1.2;
+  }
+
+  .panel{
+    padding:20px;
+  }
+
+  .hero-item{
+    flex-direction:column;
+    gap:4px;
+  }
 
   .services-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr;
+    gap:18px;
   }
 
   .services-grid .card,
@@ -195,10 +247,30 @@ footer{
   .services-grid .card:nth-child(5){
     grid-column:auto;
   }
+
+  .card{
+    padding:20px;
+  }
+
+  footer{
+    padding:24px 16px;
+  }
 }
 
-@media(max-width:600px){
-  .services-grid{grid-template-columns:1fr}
+@media(max-width:420px){
+  .logo-mark{
+    width:44px;
+    height:44px;
+  }
+
+  .hero h2{
+    font-size:1.75rem;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
 }
 </style>
 </head>
