@@ -23,8 +23,14 @@ body{
   font-family:Arial,sans-serif;
   color:var(--text);
   background:
-    linear-gradient(rgba(2,6,23,.72),rgba(2,6,23,.9)),
+    body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(2,6,23,.45),rgba(2,6,23,.7)),
     url("images/networking.jpg") center/cover no-repeat fixed;
+}
 }
 
 /* HEADER */
@@ -134,11 +140,6 @@ p{
 /* PRICING */
 .price-card{
   background:rgba(255,255,255,.04);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:20px;
-  margin-bottom:15px;
-}
 
 .price{
   font-size:1.7rem;
@@ -184,16 +185,49 @@ footer{
 
 /* MOBILE */
 @media(max-width:800px){
-  .hero{grid-template-columns:1fr}
+
+  header{
+    padding:16px 18px;
+  }
 
   nav{
     width:100%;
-    margin-top:14px;
+    margin-top:12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
   }
 
   nav a{
-    display:inline-block;
-    margin:4px;
+    margin-left:0;
+    font-size:.9rem;
+    padding:8px 12px;
+  }
+
+  .container{
+    padding:40px 16px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .panel{
+    padding:20px;
+  }
+
+  .btn-row{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .trust-grid{
+    grid-template-columns:1fr;
   }
 }
 </style>
