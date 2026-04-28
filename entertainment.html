@@ -169,13 +169,24 @@ footer{
 }
 
 @media(max-width:800px){
-  .hero{grid-template-columns:1fr}
+
+  header{
+    padding:16px 18px;
+  }
 
   nav{
     width:100%;
-    margin-top:14px;
+    margin-top:12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
   }
-  @media(max-width:800px){
+
+  nav a{
+    margin-left:0;
+    font-size:.9rem;
+    padding:8px 12px;
+  }
 
   .container{
     padding:40px 16px;
@@ -200,21 +211,15 @@ footer{
   }
 
   .price-card{
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:20px;
-  margin-bottom:15px;
-}
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:15px;
+  }
 
   .trust-grid{
     grid-template-columns:1fr;
-  }
-}
-
-  nav a{
-    display:inline-block;
-    margin:4px;
   }
 }
 </style>
