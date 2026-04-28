@@ -13,19 +13,18 @@
       --muted: #cbd5e1;
       --primary: #14b8a6;
       --primary-2: #22c55e;
-      --card: rgba(15, 23, 42, 0.88);
+      --card: rgba(15,23,42,.85);
       --line: rgba(110, 231, 183, 0.18);
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(20,184,166,0.16), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(34,197,94,0.12), transparent 30%),
-        linear-gradient(135deg, #020617, #0f172a);
-    }
+    body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(2,6,23,.45),rgba(2,6,23,.7)),
+    url("images/networking.jpg") center/cover no-repeat fixed;
+}
 
     header {
       display: flex;
@@ -223,32 +222,49 @@
       line-height: 1;
     }
 
-    @media (max-width: 700px) {
-      header {
-        padding: 18px 20px;
-      }
+    @media (max-width:700px){
 
-      nav {
-        width: 100%;
-        margin-top: 14px;
-      }
+  header{
+    padding:16px 18px;
+  }
 
-      nav a {
-        margin: 0 14px 0 0;
-        display: inline-block;
-      }
+  nav{
+    width:100%;
+    margin-top:12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
 
-      .whatsapp-float span {
-        display: none;
-      }
+  nav a{
+    margin:0;
+    font-size:.9rem;
+    padding:6px 10px;
+  }
 
-      .whatsapp-float {
-        width: 56px;
-        height: 56px;
-        justify-content: center;
-        border-radius: 50%;
-      }
-    }
+  .hero{
+    padding:40px 16px 20px;
+  }
+
+  .gallery-wrap{
+    padding:10px 16px 50px;
+  }
+
+  .gallery-card img{
+    height:200px;
+  }
+
+  .whatsapp-float span{
+    display:none;
+  }
+
+  .whatsapp-float{
+    width:56px;
+    height:56px;
+    justify-content:center;
+    border-radius:50%;
+  }
+}
   </style>
 </head>
 <body>
