@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CCTV Installation | Synexis IT Solutions</title>
@@ -20,7 +21,7 @@
 
 body{
   margin:0;
-  font-family:Arial,sans-serif;
+  font-family:'Inter',sans-serif;
   color:var(--text);
   background:
     linear-gradient(rgba(2,6,23,.45),rgba(2,6,23,.7)),
@@ -56,16 +57,30 @@ header{
 .brand h1{margin:0;font-size:1.5rem}
 .brand p{margin:5px 0 0;color:#7dd3fc}
 
+nnav{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
 nav a{
   color:white;
   text-decoration:none;
-  margin-left:10px;
   padding:8px 14px;
-  border-radius:20px;
+  border-radius:999px;
+  font-size:1rem;
+  font-weight:600;
+}
+
+nav a:hover{
+  background:rgba(255,255,255,.08);
+  color:#99f6e4;
 }
 
 nav a.active{
   background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  color:white;
 }
 
 .container{
