@@ -16,8 +16,12 @@
 }
 *{box-sizing:border-box}
 body{
-  margin:0;font-family:Arial,sans-serif;color:var(--text);
-  background:linear-gradient(rgba(2,6,23,.72),rgba(2,6,23,.9)),url("images/networking.jpg") center/cover no-repeat fixed;
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(2,6,23,.45),rgba(2,6,23,.7)),
+    url("images/networking.jpg") center/cover no-repeat fixed;
 }
 header{
   display:flex;justify-content:space-between;align-items:center;padding:20px 40px;
@@ -46,7 +50,11 @@ h3{margin-top:0;color:#99f6e4}
 p,a{color:var(--muted);line-height:1.8}
 a{text-decoration:none}
 .info-card{
-  background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:16px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:16px;
 }
 .btn{
   display:inline-block;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:bold;
@@ -64,9 +72,46 @@ button{
 iframe{width:100%;height:280px;border:0}
 footer{text-align:center;padding:30px;background:rgba(2,6,23,.94)}
 @media(max-width:900px){
-  .container{grid-template-columns:1fr}
-  nav{width:100%;margin-top:14px}
-  nav a{display:inline-block;margin:4px}
+
+  header{
+    padding:16px 18px;
+  }
+
+  nav{
+    width:100%;
+    margin-top:12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  nav a{
+    margin-left:0;
+    font-size:.9rem;
+    padding:8px 12px;
+  }
+
+  .hero{
+    padding:40px 16px 10px;
+  }
+
+  .hero h2{
+    font-size:1.9rem;
+  }
+
+  .container{
+    grid-template-columns:1fr;
+    padding:20px 16px 50px;
+  }
+
+  .panel{
+    padding:20px;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
 }
 </style>
 </head>
