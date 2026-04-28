@@ -53,10 +53,31 @@ header{
 .brand h1{margin:0;font-size:1.5rem}
 .brand p{margin:5px 0 0;color:#7dd3fc}
 
-nav a{
-  font-size:1rem;
+nnav{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
 }
 
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:1rem;
+  font-weight:600;
+}
+
+nav a:hover{
+  background:rgba(255,255,255,.08);
+  color:#99f6e4;
+}
+
+nav a.active{
+  background:linear-gradient(135deg,var(--primary),var(--primary-2));
+  color:white;
+}
 nav a.active{
   background:linear-gradient(135deg,var(--primary),var(--primary-2));
 }
