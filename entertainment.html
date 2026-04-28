@@ -23,8 +23,9 @@ body{
   font-family:Arial,sans-serif;
   color:var(--text);
   background:
-    linear-gradient(rgba(2,6,23,.72),rgba(2,6,23,.9)),
-    url("images/theatre.jpg") center/cover no-repeat fixed;
+    background:
+  linear-gradient(rgba(2,6,23,.45),rgba(2,6,23,.7)),
+  url("images/theatre.jpg") center/cover no-repeat fixed;
 }
 
 header{
@@ -175,6 +176,42 @@ footer{
     width:100%;
     margin-top:14px;
   }
+  @media(max-width:800px){
+
+  .container{
+    padding:40px 16px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .panel{
+    padding:20px;
+  }
+
+  .btn-row{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .price-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:15px;
+}
+
+  .trust-grid{
+    grid-template-columns:1fr;
+  }
+}
 
   nav a{
     display:inline-block;
