@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Synexis IT Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -24,11 +25,11 @@
 
 body{
   margin:0;
-  font-family:Arial,sans-serif;
+  font-family:'Inter',sans-serif;
   color:var(--text);
   background:
-  linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.9)),
-  url("images/networking.jpg") center/cover no-repeat fixed;
+    linear-gradient(rgba(2,6,23,.45),rgba(2,6,23,.7)),
+    url("images/networking.jpg") center/cover no-repeat fixed;
 }
 
 /* HEADER */
@@ -213,6 +214,7 @@ footer{
 
 /* MOBILE */
 @media(max-width:800px){
+
   header{
     padding:16px 18px;
   }
@@ -253,8 +255,15 @@ footer{
   }
 
   .hero h2{
-    font-size:2rem;
-    line-height:1.2;
+    font-size:1.8rem;
+  }
+
+  h3{
+    font-size:1.2rem;
+  }
+
+  p{
+    font-size:1rem;
   }
 
   .panel{
@@ -268,51 +277,10 @@ footer{
 
   .services-grid{
     grid-template-columns:1fr;
-    gap:18px;
-  }
-
-  .services-grid .card,
-  .services-grid .card:nth-child(4),
-  .services-grid .card:nth-child(5){
-    grid-column:auto;
-  }
-
-  .card{
-    padding:20px;
   }
 
   footer{
     padding:24px 16px;
-  }
-  @media(max-width:800px){
-
-  h2{
-    font-size:1.8rem;
-  }
-
-  h3{
-    font-size:1.2rem;
-  }
-
-  p{
-    font-size:1rem;
-  }
-}
-}
-
-@media(max-width:420px){
-  .logo-mark{
-    width:44px;
-    height:44px;
-  }
-
-  .hero h2{
-    font-size:1.75rem;
-  }
-
-  .btn{
-    width:100%;
-    text-align:center;
   }
 }
 </style>
@@ -322,11 +290,14 @@ footer{
 
 <header>
   <div class="brand-wrap">
-    <div class="logo-mark">SI</div>
-    <div class="brand">
-      <h1>Synexis IT Solutions</h1>
-      <p>Where Technology Meets Security</p>
-    </div>
+  <div class="logo-mark">SI</div>
+  <div class="brand">
+    <h1>Synexis IT Solutions</h1>
+    <p>Where Technology Meets Security</p>
+  </div>
+</div>
+
+<nav>
 
   <nav>
     <a href="index.html" class="active">Home</a>
@@ -381,9 +352,6 @@ footer{
       <span>Home Entertainment</span>
       <span>From R1000</span>
     </div>
-
-  </div>
-</div>
 </section>
 
 <!-- SERVICES -->
