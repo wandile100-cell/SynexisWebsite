@@ -23,8 +23,8 @@ body{
   font-family:Arial,sans-serif;
   color:var(--text);
   background:
-    linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.9)),
-    url("images/bg.jpg") center/cover no-repeat fixed;
+    linear-gradient(rgba(2,6,23,.45),rgba(2,6,23,.72)),
+    url("images/networking.jpg") center/cover no-repeat fixed;
 }
 
 /* HEADER */
@@ -170,9 +170,44 @@ footer{
 }
 
 /* MOBILE */
-@media(max-width:1000px){
+@media(max-width:800px){
+  header{
+    padding:16px 18px;
+  }
+
+  .brand-wrap{
+    width:100%;
+  }
+
+  .brand h1{
+    font-size:1.2rem;
+  }
+
+  .brand p{
+    font-size:.85rem;
+  }
+
+  nav{
+    width:100%;
+    margin-top:14px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  nav a{
+    margin-left:0;
+    padding:8px 12px;
+    font-size:.9rem;
+  }
+
+  .container{
+    padding:40px 16px;
+  }
+
   .services-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr;
+    gap:18px;
   }
 
   .card-link,
@@ -180,16 +215,9 @@ footer{
   .card-link:nth-child(5){
     grid-column:auto;
   }
-}
 
-@media(max-width:600px){
-  .services-grid{
+  .pricing-grid{
     grid-template-columns:1fr;
-  }
-
-  nav{
-    width:100%;
-    margin-top:10px;
   }
 }
 </style>
@@ -308,8 +336,9 @@ footer{
 </div>
 
 <footer>
-<p>Synexis IT Solutions • Johannesburg</p>
+  <p>Synexis IT Solutions • Johannesburg, South Africa</p>
+  <p>Call/WhatsApp: 069 068 2639 / 067 211 9335</p>
+  <p>Email: info@synexis.co.za</p>
 </footer>
-
 </body>
 </html>
